@@ -41,6 +41,10 @@ ideas:
 - [ ] adding to 51dataset. don't think file updates automatically assoicate.
 - [ ] add qdrant integration... current model embeddings.
 - [ ] mlflow integration
+- [ ] fifty one inbuilt image embedding is incredible, can naively view all images in 2d space. like what i've manuyally implemented in jupytermany times
+- [ ] label must be saved in the tfrecord file.
+  - how does a image go from unlabelled to labeleld then, rewrite the tfrecord?
+    - plausbile as making tfrecord uses raw bytes of image, doesnt decode (so fast)
 
 # labels
 
@@ -66,8 +70,13 @@ setting up cvat
 
 ```
 cd /home/fergus/cvat
-docker-compose up -d
-docker
+docker-compose up # can add -d to run in background, but i like to close when not using
+```
+
+running qdrant
+
+```
+docker run -p 6333:6333 qdrant/qdrant
 ```
 
 1. downloading icloud photos to local disk. only downloads undownloaded photos.

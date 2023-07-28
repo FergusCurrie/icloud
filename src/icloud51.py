@@ -49,6 +49,25 @@ def stats():
     fo.pprint(dataset.stats(include_media=True))
 
 
+def save_all_labels():
+    """
+    load_annotations wukk download and merge annotations from cvat into 51.
+    It will not delete the annotation task from 51.
+    """
+    dataset = fo.load_dataset(config.FIFTYONE_DATASET_NAME)
+    anno_key = "label_all"
+    dataset.load_annotations(
+        anno_key,
+        url="http://localhost:8080",
+    )
+
+    # Load the view that was annotated in the App
+    view = dataset.load_annotation_view(anno_key)
+    session = fo.launch_app(view=view)
+
+    session.wait()
+
+
 def label_all():
     """
     Creates cvat labelling job for all images in dataset.
@@ -98,5 +117,7 @@ if __name__ == "__main__":
         stats()
     elif args.process == ["label_all"]:
         label_all()
+    elif args.process == ["save_all_labels"]:
+        save_all_labels()
     else:
         raise Exception("Invalid 51 process type")
