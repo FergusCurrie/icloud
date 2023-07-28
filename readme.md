@@ -37,6 +37,10 @@ ideas:
 - [ ] standardise image sizes
 - [x] decide on classes i want to sort into
 - [ ] deal with data duplicates. stop data leakage
+- [ ] clean up icloud51.py parser
+- [ ] adding to 51dataset. don't think file updates automatically assoicate.
+- [ ] add qdrant integration... current model embeddings.
+- [ ] mlflow integration
 
 # labels
 
@@ -51,13 +55,20 @@ ideas:
 - my fitness pal
 - photo of beer can
 - photos inside
--
 
 # masks
 
 - segmentation masks of me
 
 # setup
+
+setting up cvat
+
+```
+cd /home/fergus/cvat
+docker-compose up -d
+docker
+```
 
 1. downloading icloud photos to local disk. only downloads undownloaded photos.
 
