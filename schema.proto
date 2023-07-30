@@ -1,0 +1,30 @@
+feature {
+  name: "image" 
+  type: FLOAT
+
+  float_domain {
+    min: 0
+    max: 255
+  }
+
+  shape {
+    dim { size: 224 }
+    dim { size: 224 }
+    dim { size: 3 }
+  }
+}
+
+feature {
+  name: "label"
+  type: FLOAT
+
+  float_domain {
+    min: 0
+    max: 1
+  }
+
+  shape {
+    dim { size: 128 }
+    dim { size: 128 }
+  }  
+}

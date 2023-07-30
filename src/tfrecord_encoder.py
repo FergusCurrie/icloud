@@ -11,14 +11,13 @@ Currently 3gb, 1 host.
 
 import tensorflow as tf
 from pathlib import Path
-from logger import get_logger
 import fiftyone as fo
+import os
+from src.config import IcloudConfig
+from src.logger import get_logger
 
-from config import IcloudConfig
-from logger import get_logger
 
 config = IcloudConfig()
-logger = get_logger()
 
 
 def _bytes_feature(value):
@@ -29,6 +28,10 @@ def _bytes__for_string_feature(value):
     return tf.train.Feature(
         bytes_list=tf.train.BytesList(value=[value.encode("utf-8")])
     )
+
+
+def _int64_feature(value):
+    return tf.train.Feature(int64_list=tf.train.Int64List(value=[value]))
 
 
 def udpate_fiftyone_metadata(image_path: str, dataset: fo.Dataset) -> None:
@@ -45,26 +48,38 @@ def check_sample_in_tfrecord(sample: fo.Sample) -> bool:
     return flag
 
 
-def encode_dataset():
+def encode_dataset(dataset, save_path: Path = config.TFRECORD_FILENAME):
     logger = get_logger()
-    logger.debug("Encoding dataset")
-    dataset = fo.load_dataset(config.FIFTYONE_DATASET_NAME)
-    filenames: str = [
-        str(x)
-        for x in (config.ICLOUD_DATA_PATH / "raw_icloud").iterdir()
-        if x.suffix == ".jpg" and not check_sample_in_tfrecord(dataset[str(x)])
-    ]
 
-    with tf.io.TFRecordWriter(str(config.TFRECORD_FILENAME)) as writer:
+    logger.debug("Encoding dataset")
+
+    # filenames: str = [
+    #     str(x)
+    #     for x in (config.ICLOUD_DATA_PATH / "raw_icloud").iterdir()
+    #     if x.suffix == ".jpg"  # and not check_sample_in_tfrecord(dataset[str(x)])
+    # ]
+    filenames = [str(x.filepath) for x in dataset.iter_samples()]
+    # remove file with os.remove
+    os.remove(save_path / "tfrecord/icloud_data.tfrecord")
+
+    with tf.io.TFRecordWriter(
+        str(save_path / "tfrecord/icloud_data.tfrecord")
+    ) as writer:
         count = 0
         for image_path in filenames:
             try:  # TODO: write with context handler
                 raw_file = tf.io.read_file(image_path)
+                labels = [
+                    x.label
+                    for x in dataset[image_path]["('new_field',)"].classifications
+                ]
+                fergus_labels = 1 if "fergus" in labels else 0
                 example = tf.train.Example(
                     features=tf.train.Features(
                         feature={
                             "image_raw": _bytes_feature(raw_file.numpy()),
                             "filename": _bytes__for_string_feature(image_path),
+                            "label": _int64_feature(fergus_labels),
                         }
                     )
                 )
@@ -79,4 +94,5 @@ def encode_dataset():
 
 
 if __name__ == "__main__":
-    encode_dataset()
+    dataset = fo.load_dataset(config.FIFTYONE_DATASET_NAME)
+    encode_dataset(dataset)
