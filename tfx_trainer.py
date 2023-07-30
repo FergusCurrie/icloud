@@ -1,10 +1,34 @@
 import tensorflow as tf
 from tensorflow.keras.applications.convnext import ConvNeXtTiny
 import tfx
+from tfx_bsl.public import tfxio
+import fiftyone as fo
+from pathlib import Path
 
 
-def _input_fn() -> tf.data.Dataset:
-    pass
+def _input_fn():
+    dataset = fo.load_dataset("icloud")
+    labeled_view = dataset.match({"('new_field',)": {"$exists": True}})
+    images, labels = [], []
+    for img in labeled_view:
+        # print(img)
+        filepath: str = img.filepath
+        a_labels = []
+        for classification in img["('new_field',)"].classifications:
+            a_labels.append(classification.label)
+        image = tf.io.decode_jpeg(tf.io.read_file(filepath))
+        images.append(image)
+        labels.append(a_labels)
+    # resizing
+    images = [
+        tf.image.resize(
+            image, [224, 224], method=tf.image.ResizeMethod.NEAREST_NEIGHBOR
+        )
+        for image in images
+    ]
+    fergus_labels = [1 if "fergus" in label else 0 for label in labels]
+    dataset = tf.data.Dataset.from_tensor_slices((images, fergus_labels))
+    return dataset
 
 
 def _build_keral_model():

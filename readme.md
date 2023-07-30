@@ -1,4 +1,6 @@
-# icloud syncer sorter extractor etc.
+# icloud sync & sort as mlops practice.
+
+Using TensorFlow Extended, beam, fiftyone, cvat create a ml pipeline for classifying my icloud.
 
 Needs a .env file containing the following:
 
@@ -57,7 +59,7 @@ ideas:
 - default an other catagory?
 - food
 - my fitness pal
-- photo of beer can
+- photo of can
 - photos inside
 
 # masks
