@@ -8,13 +8,15 @@ is 10+ MBs (and ideally 100+ MBs, X is size of dataset in GB).
 
 Currently 3gb, 1 host. 
 """
-
+import numpy as np
 import tensorflow as tf
 from pathlib import Path
 import fiftyone as fo
 import os
+import tempfile
 from src.config import IcloudConfig
 from src.logger import get_logger
+from skimage import io
 
 
 config = IcloudConfig()
@@ -48,6 +50,14 @@ def check_sample_in_tfrecord(sample: fo.Sample) -> bool:
     return flag
 
 
+def create_500_500_dataset(file, file_new):
+    # create a temp directory
+
+    img = io.imread(file)
+    img = img[:500, :500]
+    io.imsave(file_new, img)
+
+
 def encode_dataset(dataset, save_path: Path = config.TFRECORD_FILENAME):
     logger = get_logger()
 
@@ -59,6 +69,7 @@ def encode_dataset(dataset, save_path: Path = config.TFRECORD_FILENAME):
     #     if x.suffix == ".jpg"  # and not check_sample_in_tfrecord(dataset[str(x)])
     # ]
     filenames = [str(x.filepath) for x in dataset.iter_samples()]
+    temp_dir = tempfile.TemporaryDirectory()
     # remove file with os.remove
     os.remove(save_path / "tfrecord/icloud_data.tfrecord")
 
@@ -68,7 +79,14 @@ def encode_dataset(dataset, save_path: Path = config.TFRECORD_FILENAME):
         count = 0
         for image_path in filenames:
             try:  # TODO: write with context handler
-                raw_file = tf.io.read_file(image_path)
+                # print(image_path.split("/"))
+                # print(temp_dir.name)
+                image_new_path = temp_dir.name + "/" + image_path.split("/")[-1]
+                # print(image_new_path)
+
+                create_500_500_dataset(image_path, image_new_path)
+
+                raw_file = tf.io.read_file(image_new_path)
                 labels = [
                     x.label
                     for x in dataset[image_path]["('new_field',)"].classifications
@@ -78,7 +96,7 @@ def encode_dataset(dataset, save_path: Path = config.TFRECORD_FILENAME):
                     features=tf.train.Features(
                         feature={
                             "image_raw": _bytes_feature(raw_file.numpy()),
-                            "filename": _bytes__for_string_feature(image_path),
+                            # "filename": _bytes__for_string_feature(image_path),
                             "label": _int64_feature(fergus_labels),
                         }
                     )

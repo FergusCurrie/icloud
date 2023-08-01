@@ -59,7 +59,7 @@ def input_fn(
     file_pattern,
     data_accessor,
     tf_transform_output: tft.TFTransformOutput,
-    batch_size=32,
+    batch_size=16,
 ):
     """
     Function to load from tfrecords in pipeline output.
@@ -68,7 +68,7 @@ def input_fn(
         file_pattern,
         tfxio.TensorFlowDatasetOptions(batch_size=batch_size, label_key="labels_xf"),
         schema=tf_transform_output.transformed_metadata.schema,
-    ).repeat()
+    )
 
     # return data_accessor.tf_dataset_factory(
     #     file_pattern,
@@ -107,7 +107,7 @@ def _build_keral_model():
     x = model(inputs)
     x = tf.keras.layers.GlobalAveragePooling2D()(x)
     x = tf.keras.layers.Dense(256, activation=tf.nn.softmax)(x)
-    outputs = tf.keras.layers.Dense(32, activation=tf.nn.softmax)(x)
+    outputs = tf.keras.layers.Dense(2, activation=tf.nn.softmax)(x)
     finetune_model = tf.keras.Model(inputs=inputs, outputs=outputs)
     return finetune_model
 
