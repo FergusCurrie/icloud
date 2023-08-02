@@ -24,4 +24,5 @@ class IcloudConfig:
         "my_fitness_pal",
         "can",
         "indoors",
+        "nothing",
     )

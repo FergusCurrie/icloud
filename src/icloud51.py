@@ -33,8 +33,6 @@ def server():
     # Launch the App
     session = fo.launch_app()
 
-    # (Perform any additional operations here)
-
     # Blocks execution until the App is closed
     session.wait()
 
@@ -61,12 +59,6 @@ def save_all_labels():
         url="http://localhost:8080",
     )
 
-    # Load the view that was annotated in the App
-    view = dataset.load_annotation_view(anno_key)
-    session = fo.launch_app(view=view)
-
-    session.wait()
-
 
 def label_all():
     """
@@ -82,7 +74,10 @@ def label_all():
         dataset.delete_annotation_run(anno_key)
     except:
         pass
-    view = dataset.exists("metadata", True).limit(100)
+    # view = dataset.exists("metadata", True).limit(100)
+    #
+
+    view = dataset.match({"('new_field',)": {"$exists": False}}).limit(100)
     print(view)
 
     label_field = (

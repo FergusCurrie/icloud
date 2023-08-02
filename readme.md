@@ -16,7 +16,15 @@ Using TensorFlow Extended, beam, fiftyone, cvat create a ml pipeline for classif
 - [ ] drift detection
 - [ ] continual learning
 
-# labelling.
+# manual create labelling job
+
+Note that CVAT limits the size of training jobs.
+
+`python3 src/cloud51.py label_all`
+
+After labelling in cvat at : `http://localhost:8080/` (and saving in cvat) run:
+
+`python3 src/cloud51.py save_all_labels`
 
 # setup
 
