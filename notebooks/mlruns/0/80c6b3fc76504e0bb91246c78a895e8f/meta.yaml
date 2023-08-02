@@ -1,0 +1,15 @@
+artifact_uri: file:///home/fergus/repos/icloud/notebooks/mlruns/0/80c6b3fc76504e0bb91246c78a895e8f/artifacts
+end_time: 1690953446909
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 80c6b3fc76504e0bb91246c78a895e8f
+run_name: nosy-perch-919
+run_uuid: 80c6b3fc76504e0bb91246c78a895e8f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1690953445441
+status: 3
+tags: []
+user_id: fergus

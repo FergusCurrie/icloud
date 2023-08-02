@@ -646,3 +646,115 @@
 2023-08-02 00:45:18,669 - Encoded /home/fergus/data/icloud_data/raw_icloud/IMG_1171.jpg images
 2023-08-02 00:45:18,728 - Encoded /home/fergus/data/icloud_data/raw_icloud/IMG_1175.jpg images
 2023-08-02 00:45:18,728 - Encoded 99 images
+2023-08-02 17:33:55,425 - Encoding dataset
+2023-08-02 17:42:01,827 - Encoding dataset
+2023-08-02 17:42:01,827 - No record to remove
+2023-08-02 17:42:33,554 - Encoding dataset
+2023-08-02 17:42:33,554 - No record to remove
+2023-08-02 17:43:13,553 - Encoding dataset
+2023-08-02 17:43:13,553 - No record to remove
+2023-08-02 17:44:23,440 - Encoding dataset
+2023-08-02 17:44:23,440 - No record to remove
+2023-08-02 17:44:47,744 - Encoding dataset
+2023-08-02 17:44:47,744 - No record to remove
+2023-08-02 17:46:19,153 - Encoding dataset
+2023-08-02 17:46:19,819 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/65406640450__2035E50E-1163-4602-A1E7-441C3124A9FB.jpg
+2023-08-02 17:46:19,911 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/65511171636__33477F60-3F0A-4C42-A5CC-D430B9AFB785.jpg
+2023-08-02 17:46:19,967 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/65563041563__2535EEAA-8B68-475F-AC4A-ACEF1D65BF6D.jpg
+2023-08-02 17:46:20,057 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/67679798003__9EA3875E-3FE3-4EAA-BED5-1AB17FCAF02B.jpg
+2023-08-02 17:46:20,138 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/68414075190__4FDAB71A-6D36-4A63-97EF-8653B9D5CD42.jpg
+2023-08-02 17:46:20,238 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/68490478794__7894C590-2646-49AD-B65D-2BDC65824C5F.jpg
+2023-08-02 17:46:20,325 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/68885754547__93822554-80E1-4A47-94A6-D07C21854B9E.jpg
+2023-08-02 17:46:20,413 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0037.jpg
+2023-08-02 17:46:20,504 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0043.jpg
+2023-08-02 17:46:20,590 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0049.jpg
+2023-08-02 17:46:20,675 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0050.jpg
+2023-08-02 17:46:20,778 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0207.jpg
+2023-08-02 17:46:20,880 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0208.jpg
+2023-08-02 17:46:20,979 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0209.jpg
+2023-08-02 17:46:21,080 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0210.jpg
+2023-08-02 17:46:21,181 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0211.jpg
+2023-08-02 17:46:21,283 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0212.jpg
+2023-08-02 17:46:21,391 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0213.jpg
+2023-08-02 17:46:21,499 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0214.jpg
+2023-08-02 17:46:21,584 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0637.jpg
+2023-08-02 17:46:21,671 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0638.jpg
+2023-08-02 17:46:21,760 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0676.jpg
+2023-08-02 17:46:21,848 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0807.jpg
+2023-08-02 17:46:21,935 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0811.jpg
+2023-08-02 17:46:22,024 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0812.jpg
+2023-08-02 17:46:22,111 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0813.jpg
+2023-08-02 17:46:22,202 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0815.jpg
+2023-08-02 17:46:22,290 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0816.jpg
+2023-08-02 17:46:22,381 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0817.jpg
+2023-08-02 17:46:22,470 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0818.jpg
+2023-08-02 17:46:22,561 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0819.jpg
+2023-08-02 17:46:22,649 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0820.jpg
+2023-08-02 17:46:22,739 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0821.jpg
+2023-08-02 17:46:22,828 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0822.jpg
+2023-08-02 17:46:22,917 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0823.jpg
+2023-08-02 17:46:23,004 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0824.jpg
+2023-08-02 17:46:23,094 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0825.jpg
+2023-08-02 17:46:23,183 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0826.jpg
+2023-08-02 17:46:23,272 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0827.jpg
+2023-08-02 17:46:23,361 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0828.jpg
+2023-08-02 17:46:23,451 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0829.jpg
+2023-08-02 17:46:23,544 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0841.jpg
+2023-08-02 17:46:23,652 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0849.jpg
+2023-08-02 17:46:23,744 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0904.jpg
+2023-08-02 17:46:23,848 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0974.jpg
+2023-08-02 17:46:23,953 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0975.jpg
+2023-08-02 17:46:24,058 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0976.jpg
+2023-08-02 17:46:24,162 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0977.jpg
+2023-08-02 17:46:24,264 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0978.jpg
+2023-08-02 17:46:24,370 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0979.jpg
+2023-08-02 17:46:24,475 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0980.jpg
+2023-08-02 17:46:24,582 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0981.jpg
+2023-08-02 17:46:24,681 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0982.jpg
+2023-08-02 17:46:24,778 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0983.jpg
+2023-08-02 17:46:24,881 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0984.jpg
+2023-08-02 17:46:24,984 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0985.jpg
+2023-08-02 17:46:25,088 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0986.jpg
+2023-08-02 17:46:25,192 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0987.jpg
+2023-08-02 17:46:25,296 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0988.jpg
+2023-08-02 17:46:25,396 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0989.jpg
+2023-08-02 17:46:25,500 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0990.jpg
+2023-08-02 17:46:25,602 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0991.jpg
+2023-08-02 17:46:25,705 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0992.jpg
+2023-08-02 17:46:25,810 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0994.jpg
+2023-08-02 17:46:25,913 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0995.jpg
+2023-08-02 17:46:26,015 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0996.jpg
+2023-08-02 17:46:26,118 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0997.jpg
+2023-08-02 17:46:26,220 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0998.jpg
+2023-08-02 17:46:26,322 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_0999.jpg
+2023-08-02 17:46:26,428 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1001.jpg
+2023-08-02 17:46:26,532 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1002.jpg
+2023-08-02 17:46:26,638 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1003.jpg
+2023-08-02 17:46:26,744 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1004.jpg
+2023-08-02 17:46:26,835 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1052.jpg
+2023-08-02 17:46:26,928 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1054.jpg
+2023-08-02 17:46:27,020 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1055.jpg
+2023-08-02 17:46:27,110 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1056.jpg
+2023-08-02 17:46:27,203 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1067.jpg
+2023-08-02 17:46:27,296 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1073.jpg
+2023-08-02 17:46:27,386 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1098.jpg
+2023-08-02 17:46:27,478 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1099.jpg
+2023-08-02 17:46:27,571 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1100.jpg
+2023-08-02 17:46:27,665 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1101.jpg
+2023-08-02 17:46:27,756 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1102.jpg
+2023-08-02 17:46:27,847 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1103.jpg
+2023-08-02 17:46:27,936 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1108.jpg
+2023-08-02 17:46:28,025 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1109.jpg
+2023-08-02 17:46:28,120 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1119.jpg
+2023-08-02 17:46:28,213 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1120.jpg
+2023-08-02 17:46:28,302 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1121.jpg
+2023-08-02 17:46:28,396 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1123.jpg
+2023-08-02 17:46:28,493 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1141.jpg
+2023-08-02 17:46:28,592 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1149.jpg
+2023-08-02 17:46:28,698 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1159.jpg
+2023-08-02 17:46:28,805 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1160.jpg
+2023-08-02 17:46:28,910 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1163.jpg
+2023-08-02 17:46:29,017 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1170.jpg
+2023-08-02 17:46:29,124 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1171.jpg
+2023-08-02 17:46:29,179 - Failed to encode /home/fergus/data/icloud_data/raw_icloud/IMG_1175.jpg
+2023-08-02 17:46:29,179 - Encoded 0 images

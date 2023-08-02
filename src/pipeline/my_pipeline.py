@@ -42,11 +42,11 @@ def create_pipeline(
     transform = Transform(
         examples=example_gen.outputs["examples"],
         schema=schema_gen.outputs["schema"],
-        module_file=os.path.abspath("tft_module.py"),
+        module_file=os.path.abspath("src/pipeline/tfx_transform.py"),
     )
 
     trainer = Trainer(
-        module_file="tfx_trainer.py",
+        module_file="src/pipeline/tfx_trainer.py",
         examples=transform.outputs[
             "transformed_examples"
         ],  # TODO: is this a set string

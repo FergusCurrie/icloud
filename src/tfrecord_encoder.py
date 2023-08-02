@@ -8,7 +8,6 @@ is 10+ MBs (and ideally 100+ MBs, X is size of dataset in GB).
 
 Currently 3gb, 1 host. 
 """
-import numpy as np
 import tensorflow as tf
 from pathlib import Path
 import fiftyone as fo
@@ -26,20 +25,8 @@ def _bytes_feature(value):
     return tf.train.Feature(bytes_list=tf.train.BytesList(value=[value]))
 
 
-def _bytes__for_string_feature(value):
-    return tf.train.Feature(
-        bytes_list=tf.train.BytesList(value=[value.encode("utf-8")])
-    )
-
-
 def _int64_feature(value):
     return tf.train.Feature(int64_list=tf.train.Int64List(value=[value]))
-
-
-def udpate_fiftyone_metadata(image_path: str, dataset: fo.Dataset) -> None:
-    sample = dataset[image_path]
-    sample["tfrecord"] = True
-    sample.save()
 
 
 def check_sample_in_tfrecord(sample: fo.Sample) -> bool:
@@ -50,67 +37,68 @@ def check_sample_in_tfrecord(sample: fo.Sample) -> bool:
     return flag
 
 
-def create_500_500_dataset(file, file_new):
-    # create a temp directory
-
+def resize_and_save(file, file_new):
     img = io.imread(file)
     img = img[:500, :500]
     io.imsave(file_new, img)
 
 
-def encode_dataset(dataset, save_path: Path = config.TFRECORD_FILENAME):
+def encode_dataset(
+    image_filenames: list[str],
+    labels: list[int],
+    save_path: Path = config.TFRECORD_FILENAME,
+):
     logger = get_logger()
-
     logger.debug("Encoding dataset")
 
-    # filenames: str = [
-    #     str(x)
-    #     for x in (config.ICLOUD_DATA_PATH / "raw_icloud").iterdir()
-    #     if x.suffix == ".jpg"  # and not check_sample_in_tfrecord(dataset[str(x)])
-    # ]
-    filenames = [str(x.filepath) for x in dataset.iter_samples()]
     temp_dir = tempfile.TemporaryDirectory()
-    # remove file with os.remove
-    os.remove(save_path / "tfrecord/icloud_data.tfrecord")
+    try:
+        os.remove(str(save_path))
+    except:
+        logger.debug("No record to remove")
 
-    with tf.io.TFRecordWriter(
-        str(save_path / "tfrecord/icloud_data.tfrecord")
-    ) as writer:
+    with tf.io.TFRecordWriter(str(save_path)) as writer:
         count = 0
-        for image_path in filenames:
-            try:  # TODO: write with context handler
-                # print(image_path.split("/"))
-                # print(temp_dir.name)
-                image_new_path = temp_dir.name + "/" + image_path.split("/")[-1]
-                # print(image_new_path)
-
-                create_500_500_dataset(image_path, image_new_path)
-
+        for image_path in image_filenames:
+            image_new_path = temp_dir.name + "/" + image_path.split("/")[-1]
+            resize_and_save(image_path, image_new_path)
+            try:
                 raw_file = tf.io.read_file(image_new_path)
-                labels = [
-                    x.label
-                    for x in dataset[image_path]["('new_field',)"].classifications
-                ]
-                fergus_labels = 1 if "fergus" in labels else 0
                 example = tf.train.Example(
                     features=tf.train.Features(
                         feature={
                             "image_raw": _bytes_feature(raw_file.numpy()),
-                            # "filename": _bytes__for_string_feature(image_path),
-                            "label": _int64_feature(fergus_labels),
+                            "label": _int64_feature(labels),
                         }
                     )
                 )
                 writer.write(example.SerializeToString())
-                udpate_fiftyone_metadata(image_path, dataset)
-                logger.debug(f"Encoded {image_path} images")
                 count += 1
-            except FileNotFoundError:
-                print(f"File {image_path} could not be found")
+            except:
+                logger.debug(f"Failed to encode {image_path}")
                 continue
+
         logger.debug(f"Encoded {count} images")
 
 
+def encode_labelled_dataset():
+    """
+    Take the labelled dataset, and encode it into tfrecord format.
+    """
+    path = Path("/home/fergus/repos/icloud")
+    dataset = fo.load_dataset("icloud")
+    # labelled dataset
+    labeled_view = dataset.match({"('new_field',)": {"$exists": True}})
+    image_filenames = [str(x.filepath) for x in labeled_view.iter_samples()]
+    labels = []
+    for image_path in image_filenames:
+        image_labels = [
+            x.label for x in labeled_view[image_path]["('new_field',)"].classifications
+        ]
+        fergus_labels = 1 if "fergus" in image_labels else 0
+        labels.append(fergus_labels)
+    encode_dataset(image_filenames, labels)
+
+
 if __name__ == "__main__":
-    dataset = fo.load_dataset(config.FIFTYONE_DATASET_NAME)
-    encode_dataset(dataset)
+    encode_labelled_dataset()
