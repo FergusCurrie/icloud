@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-# from tensorflow.keras.applications.convnext import ConvNeXtTiny
+from tensorflow.keras.applications.convnext import ConvNeXtTiny
 import tfx
 
 # import tensorflow transform

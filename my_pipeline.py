@@ -57,7 +57,7 @@ def create_pipeline(
         eval_args=trainer_pb2.EvalArgs(num_steps=5000),
     )
 
-    components = [example_gen, statistics_gen, schema_gen, transform]  # , trainer]
+    components = [example_gen, statistics_gen, schema_gen, transform, trainer]
 
     return tfx.dsl.Pipeline(
         pipeline_name=pipeline_name,
