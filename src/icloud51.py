@@ -44,7 +44,9 @@ def delete():
 
 def stats():
     dataset = fo.load_dataset(config.FIFTYONE_DATASET_NAME)
-    fo.pprint(dataset.stats(include_media=True))
+    view = dataset.match({"('new_field',)": {"$exists": True}})
+    # print(view)
+    fo.pprint(view.stats(include_media=True))
 
 
 def save_all_labels():
