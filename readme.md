@@ -26,6 +26,10 @@ After labelling in cvat at : `http://localhost:8080/` (and saving in cvat) run:
 
 `python3 src/cloud51.py save_all_labels`
 
+# architecture diagram
+
+![architecture diagram](docs/architecture.png)
+
 # setup
 
 Needs a .env file containing the following:
