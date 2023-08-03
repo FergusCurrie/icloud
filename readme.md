@@ -1,5 +1,7 @@
 # icloud sync & sort as mlops practice.
 
+Machine learning pipelines + computer vision project.
+
 Using TensorFlow Extended, beam, fiftyone, cvat create a ml pipeline for classifying my icloud.
 
 # features
@@ -28,7 +30,7 @@ After labelling in cvat at : `http://localhost:8080/` (and saving in cvat) run:
 
 # architecture diagram
 
-![architecture diagram](docs/architecture.png)
+![architecture diagram](docs/icloud_project.drawio.png)
 
 # setup
 
